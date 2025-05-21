@@ -124,7 +124,7 @@ rosrun map_server map_saver -f ./src/survelliance_bot/src/maps/my_map
 Launch AMCL using the saved map:
 
 ```bash
-roslaunch turtlebot_gazebo amcl_demo.launch map_file:=/home/degen101/ros_home/robot_assignment_ws/src/survelliance_bot/src/maps/my_map.yaml
+roslaunch turtlebot_gazebo amcl_demo.launch map_file:=/home/${user}/ros_home/robot_assignment_ws/src/survelliance_bot/src/maps/my_map.yaml
 ```
 
 > ❗ Replace with the full path to your `.yaml` map file.
@@ -174,7 +174,7 @@ In RViz:
 In a **new terminal**:
 
 ```bash
-rosrun surveillance_bot navigator.py
+rosrun surveillance_bot navigator.py x,y
 ```
 
 You will be prompted to enter \`x\` and \`y\` coordinates.  
