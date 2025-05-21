@@ -130,6 +130,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/degen101/ros_home/robot_assignment_ws/build/turtlebot_interactions/turtlebot_dashboard/cmake_install.cmake")
   include("/home/degen101/ros_home/robot_assignment_ws/build/turtlebot_interactions/turtlebot_interactions/cmake_install.cmake")
   include("/home/degen101/ros_home/robot_assignment_ws/build/turtlebot_interactions/turtlebot_rviz_launchers/cmake_install.cmake")
+  include("/home/degen101/ros_home/robot_assignment_ws/build/survelliance_bot/cmake_install.cmake")
   include("/home/degen101/ros_home/robot_assignment_ws/build/turtlebot_interactions/turtlebot_interactive_markers/cmake_install.cmake")
 
 endif()

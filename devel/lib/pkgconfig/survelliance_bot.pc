@@ -1,0 +1,8 @@
+prefix=/home/degen101/ros_home/robot_assignment_ws/devel
+
+Name: survelliance_bot
+Description: Description of survelliance_bot
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

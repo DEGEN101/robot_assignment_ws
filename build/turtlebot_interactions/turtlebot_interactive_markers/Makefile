@@ -56,49 +56,6 @@ CMAKE_BINARY_DIR = /home/degen101/ros_home/robot_assignment_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -111,6 +68,27 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -122,6 +100,17 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -132,6 +121,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,79 +166,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
+turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
+.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-tf2_msgs_generate_messages_nodejs: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/rule
+visualization_msgs_generate_messages_nodejs: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : tf2_msgs_generate_messages_nodejs
+.PHONY : visualization_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-tf2_msgs_generate_messages_nodejs/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build
-.PHONY : tf2_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_lisp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_lisp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_lisp/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
-.PHONY : tf2_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_eus: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_eus.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_eus
-
-# fast build rule for target.
-tf2_msgs_generate_messages_eus/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_eus.dir/build
-.PHONY : tf2_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_lisp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_lisp
-
-# fast build rule for target.
-visualization_msgs_generate_messages_lisp/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
-.PHONY : visualization_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_eus: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-.PHONY : roscpp_generate_messages_eus
-
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_eus.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
+visualization_msgs_generate_messages_nodejs/fast:
+	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build
+.PHONY : visualization_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule:
@@ -256,259 +196,19 @@ visualization_msgs_generate_messages_eus/fast:
 .PHONY : visualization_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule:
+	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-actionlib_msgs_generate_messages_lisp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
+visualization_msgs_generate_messages_lisp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : actionlib_msgs_generate_messages_lisp
+.PHONY : visualization_msgs_generate_messages_lisp
 
 # fast build rule for target.
-actionlib_msgs_generate_messages_lisp/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
-.PHONY : actionlib_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_eus: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-.PHONY : std_msgs_generate_messages_eus
-
-# fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_lisp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_nodejs: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-.PHONY : roscpp_generate_messages_nodejs
-
-# fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_eus.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_eus.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_eus: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_eus.dir/rule
-
-.PHONY : tf_generate_messages_eus
-
-# fast build rule for target.
-tf_generate_messages_eus/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_eus.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_eus.dir/build
-.PHONY : tf_generate_messages_eus/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/turtlebot_marker_server.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/turtlebot_marker_server.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/turtlebot_marker_server.dir/rule
-
-# Convenience name for target.
-turtlebot_marker_server: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/turtlebot_marker_server.dir/rule
-
-.PHONY : turtlebot_marker_server
-
-# fast build rule for target.
-turtlebot_marker_server/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/turtlebot_marker_server.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/turtlebot_marker_server.dir/build
-.PHONY : turtlebot_marker_server/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_nodejs: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-sensor_msgs_generate_messages_nodejs/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-.PHONY : sensor_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-visualization_msgs_generate_messages_nodejs: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : visualization_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-visualization_msgs_generate_messages_nodejs/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_nodejs.dir/build
-.PHONY : visualization_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_cpp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_cpp
-
-# fast build rule for target.
-tf2_msgs_generate_messages_cpp/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/build
-.PHONY : tf2_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_eus: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_py: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_py
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_py/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
-.PHONY : actionlib_msgs_generate_messages_py/fast
+visualization_msgs_generate_messages_lisp/fast:
+	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
+.PHONY : visualization_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule:
@@ -526,66 +226,6 @@ visualization_msgs_generate_messages_cpp/fast:
 .PHONY : visualization_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_eus: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_eus
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_cpp.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_cpp.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_cpp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_cpp.dir/rule
-
-.PHONY : tf_generate_messages_cpp
-
-# fast build rule for target.
-tf_generate_messages_cpp/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_cpp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_cpp.dir/build
-.PHONY : tf_generate_messages_cpp/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_eus: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-
-.PHONY : actionlib_generate_messages_eus
-
-# fast build rule for target.
-actionlib_generate_messages_eus/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_eus.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_eus.dir/build
-.PHONY : actionlib_generate_messages_eus/fast
-
-# Convenience name for target.
 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule:
 	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
 .PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
@@ -601,334 +241,19 @@ visualization_msgs_generate_messages_py/fast:
 .PHONY : visualization_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/turtlebot_marker_server.dir/rule:
+	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/turtlebot_marker_server.dir/rule
+.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/turtlebot_marker_server.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_nodejs: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+turtlebot_marker_server: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/turtlebot_marker_server.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_nodejs
+.PHONY : turtlebot_marker_server
 
 # fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_py: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-.PHONY : std_msgs_generate_messages_py
-
-# fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_py.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_nodejs: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_py: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_py
-
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_py: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_lisp.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_lisp.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_lisp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_lisp.dir/rule
-
-.PHONY : tf_generate_messages_lisp
-
-# fast build rule for target.
-tf_generate_messages_lisp/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_lisp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_lisp.dir/build
-.PHONY : tf_generate_messages_lisp/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_py: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_py.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_nodejs.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_nodejs: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_nodejs.dir/rule
-
-.PHONY : tf_generate_messages_nodejs
-
-# fast build rule for target.
-tf_generate_messages_nodejs/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_nodejs.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_nodejs.dir/build
-.PHONY : tf_generate_messages_nodejs/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_py.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_py.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_py.dir/rule
-
-# Convenience name for target.
-tf_generate_messages_py: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_py.dir/rule
-
-.PHONY : tf_generate_messages_py
-
-# fast build rule for target.
-tf_generate_messages_py/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_py.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf_generate_messages_py.dir/build
-.PHONY : tf_generate_messages_py/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_cpp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_lisp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_lisp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_py: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_py
-
-# fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_cpp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-.PHONY : actionlib_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_generate_messages_cpp/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_cpp.dir/build
-.PHONY : actionlib_generate_messages_cpp/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-tf2_msgs_generate_messages_py: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
-
-.PHONY : tf2_msgs_generate_messages_py
-
-# fast build rule for target.
-tf2_msgs_generate_messages_py/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_py.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/tf2_msgs_generate_messages_py.dir/build
-.PHONY : tf2_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_nodejs: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_nodejs/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
-.PHONY : actionlib_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_eus: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_eus
-
-# fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_cpp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_cpp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_cpp/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
-.PHONY : actionlib_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_nodejs: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_generate_messages_nodejs/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
-.PHONY : actionlib_generate_messages_nodejs/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_py.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_py.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_py: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-.PHONY : actionlib_generate_messages_py
-
-# fast build rule for target.
-actionlib_generate_messages_py/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_py.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_py.dir/build
-.PHONY : actionlib_generate_messages_py/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_lisp.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_lisp: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-
-.PHONY : actionlib_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_generate_messages_lisp/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_generate_messages_lisp.dir/build
-.PHONY : actionlib_generate_messages_lisp/fast
-
-# Convenience name for target.
-turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f CMakeFiles/Makefile2 turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-.PHONY : turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_eus: turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_eus
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_eus/fast:
-	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
-.PHONY : actionlib_msgs_generate_messages_eus/fast
+turtlebot_marker_server/fast:
+	cd /home/degen101/ros_home/robot_assignment_ws/build && $(MAKE) -f turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/turtlebot_marker_server.dir/build.make turtlebot_interactions/turtlebot_interactive_markers/CMakeFiles/turtlebot_marker_server.dir/build
+.PHONY : turtlebot_marker_server/fast
 
 src/turtlebot_marker_server.o: src/turtlebot_marker_server.cpp.o
 
@@ -963,64 +288,19 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... tf2_msgs_generate_messages_nodejs"
-	@echo "... tf2_msgs_generate_messages_lisp"
-	@echo "... tf2_msgs_generate_messages_eus"
-	@echo "... visualization_msgs_generate_messages_lisp"
-	@echo "... list_install_components"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... visualization_msgs_generate_messages_eus"
-	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... install"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... rebuild_cache"
-	@echo "... tf_generate_messages_eus"
-	@echo "... test"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... turtlebot_marker_server"
-	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... visualization_msgs_generate_messages_nodejs"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... tf2_msgs_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... visualization_msgs_generate_messages_eus"
+	@echo "... list_install_components"
+	@echo "... visualization_msgs_generate_messages_lisp"
+	@echo "... install/strip"
+	@echo "... rebuild_cache"
 	@echo "... visualization_msgs_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... tf_generate_messages_cpp"
-	@echo "... actionlib_generate_messages_eus"
 	@echo "... visualization_msgs_generate_messages_py"
-	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_py"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... tf_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... tf_generate_messages_nodejs"
-	@echo "... tf_generate_messages_py"
-	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_lisp"
-	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... actionlib_generate_messages_cpp"
-	@echo "... tf2_msgs_generate_messages_py"
-	@echo "... actionlib_msgs_generate_messages_nodejs"
-	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... actionlib_msgs_generate_messages_cpp"
-	@echo "... actionlib_generate_messages_nodejs"
-	@echo "... actionlib_generate_messages_py"
-	@echo "... actionlib_generate_messages_lisp"
-	@echo "... actionlib_msgs_generate_messages_eus"
+	@echo "... install/local"
+	@echo "... turtlebot_marker_server"
+	@echo "... test"
+	@echo "... edit_cache"
 	@echo "... src/turtlebot_marker_server.o"
 	@echo "... src/turtlebot_marker_server.i"
 	@echo "... src/turtlebot_marker_server.s"

@@ -14,8 +14,7 @@ singularity run --bind /mnt/wslg ./wits-ros.simg
 Once inside the Singularity terminal:
 
 ```bash
-wget https://lamp.ms.wits.ac.za/robotics/robot_assignment_ws.tar.gz
-tar zxvf robot_assignment_ws.tar.gz
+git clone https://github.com/DEGEN101/robot_assignment_ws.git
 cd robot_assignment_ws
 catkin_make
 ```
@@ -63,7 +62,7 @@ roslaunch turtlebot_gazebo gmapping_demo.launch
 
 Custom Config
 ```bash
-roslaunch turtlebot_gazebo gmapping_demo.launch custom_gmapping_launch_file:=./survelliance_bot/launch/gmapping.launch
+roslaunch turtlebot_gazebo gmapping_demo.launch custom_gmapping_launch_file:=./src/survelliance_bot/launch/gmapping_config.launch
 ```
 
 ---
@@ -116,7 +115,7 @@ roslaunch turtlebot_rviz_launchers view_navigation.launch
 After mapping:
 
 ```bash
-rosrun map_server map_saver -f ./survelliance_bot/maps/map
+rosrun map_server map_saver -f ./src/survelliance_bot/src/maps/my_map
 ```
 ---
 
@@ -125,7 +124,7 @@ rosrun map_server map_saver -f ./survelliance_bot/maps/map
 Launch AMCL using the saved map:
 
 ```bash
-roslaunch turtlebot_gazebo amcl_demo.launch map_file:=/home/${Username}$/ros_home/robot_assignment_ws/survelliance_bot/maps/my_map.yaml
+roslaunch turtlebot_gazebo amcl_demo.launch map_file:=/home/degen101/ros_home/robot_assignment_ws/src/survelliance_bot/src/maps/my_map.yaml
 ```
 
 > ❗ Replace with the full path to your `.yaml` map file.
@@ -175,7 +174,7 @@ In RViz:
 In a **new terminal**:
 
 ```bash
-rosrun surveillance_ navigator.py
+rosrun surveillance_bot navigator.py
 ```
 
 You will be prompted to enter \`x\` and \`y\` coordinates.  
