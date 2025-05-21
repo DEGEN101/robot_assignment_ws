@@ -1,0 +1,8 @@
+prefix=/home/degen101/ros_home/robot_assignment_ws/install
+
+Name: teleop_twist_keyboard
+Description: Description of teleop_twist_keyboard
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

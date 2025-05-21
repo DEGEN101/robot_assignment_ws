@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/degen101/ros_home/robot_assignment_ws/devel/setup.sh
