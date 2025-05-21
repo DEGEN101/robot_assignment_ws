@@ -14,10 +14,16 @@ import rospy
 import numpy as np
 import sys
 import tf
+import re
+import matplotlib.pyplot as plt
 
 from std_msgs.msg import Empty
 from geometry_msgs.msg import Twist, Vector3
 from gazebo_msgs.srv import GetModelState
+
+
+Y_OFFSET = 257
+X_OFFSET = 257
 
 
 class PIDController:
@@ -68,18 +74,32 @@ def transform_velocity_to_local(vx, vy, yaw):
 
 
 def read_pgm(filename, byteorder='>'):
+    """Return image data from a raw PGM file as numpy array.
+
+    Format specification: http://netpbm.sourceforge.net/doc/pgm.html
+
+    """
     with open(filename, 'rb') as f:
         buffer = f.read()
     try:
-        header, width, height, maxval = buffer.split(b'\n', 3)
-
-    except ValueError:
+        header, width, height, maxval = re.search(
+            b"(^P5\s(?:\s*#.*[\r\n])*"
+            b"(\d+)\s(?:\s*#.*[\r\n])*"
+            b"(\d+)\s(?:\s*#.*[\r\n])*"
+            b"(\d+)\s(?:\s*#.*[\r\n]\s)*)", buffer).groups()
+    except AttributeError:
         raise ValueError("Not a raw PGM file: '%s'" % filename)
     
-    return np.frombuffer(
-        buffer, dtype='u1' if int(maxval) < 256 else byteorder + 'u2',
-        offset=len(header) + 1).reshape((int(height), int(width))
-    )
+    return np.frombuffer(buffer,
+            dtype='u1' if int(maxval) < 256 else byteorder+'u2',
+            count=int(width)*int(height),
+            offset=len(header)
+            ).reshape((int(height), int(width)))
+
+
+def get_world_map():
+    my_map = read_pgm("./src/survelliance_bot/src/maps/my_map.pgm").copy()
+    return my_map[204:549, 305:712]
 
 
 def talker():
@@ -94,9 +114,12 @@ def talker():
 
     velocity = Twist()
 
-    try:
-        model_position, _ = get_model_info(model_name="mobile_base", relative_entity_name="world")
+    world_map = get_world_map()
+    print(world_map)
 
+    try:
+        world_position, _ = get_model_info(model_name="mobile_base", relative_entity_name="world")
+        model_position = np.array([Y_OFFSET - world_position[0], X_OFFSET + world_position[1]])
         print(model_position)
 
         # TODO: Add code to find a path

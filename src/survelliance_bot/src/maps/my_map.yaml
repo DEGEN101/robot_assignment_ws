@@ -1,4 +1,4 @@
-image: ./my_map.pgm
+image: /home/degen101/ros_home/robot_assignment_ws/src/survelliance_bot/src/maps/my_map.pgm
 resolution: 0.050000
 origin: [-28.200000, -13.800000, 0.000000]
 negate: 0
