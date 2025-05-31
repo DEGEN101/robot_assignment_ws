@@ -3,8 +3,8 @@
 
 
 """
-To input the position you'd like to move the drone, specify the y & x values as follows:
-    ...navigator.py <y-coord>,<x-coord> so if I wanted to move the drone and have it land at position (4, 6). 
+To input the position you'd like to move the drone, specify the x & y values as follows:
+    ...navigator.py <x-coord>,<y-coord> so if I wanted to move the drone and have it land at position (4, 6). 
 I would type: 
     ...navigator.py 4,6.
 
@@ -182,7 +182,7 @@ def talker():
     rate = rospy.Rate(10) # 10hz
     rospy.sleep(1)
 
-    goal_coords = np.array([int(i) for i in sys.argv[-1].split(",")])
+    goal_coords = np.array([int(i) for i in sys.argv[-1].split(",")][::-1])
     goal_position = [
         int(Y_OFFSET - (goal_coords[0] / SCALE_Y_M_PER_PX)),  # convert meters to pixels
         int(X_OFFSET + (goal_coords[1] / SCALE_X_M_PER_PX))
