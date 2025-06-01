@@ -47,9 +47,12 @@ class PIDController:
         self.Kd = Kd
         self.output_limits = output_limits
 
+        self.reset()
+
+    def reset(self):
         self.integral = None
         self.prev_error = None
-    
+
     def compute(self, error, dt):
         
         if self.integral is None:
@@ -208,20 +211,17 @@ def talker():
             print("Could not find valid start or goal nearby.")
             return
 
-        print("Start:", start)
-        print("Goal:", goal)
-        print("Valid start:", is_valid(start, world_map))
-        print("Valid goal:", is_valid(goal, world_map))
-
+        print("Start: {}, Start valid: {}".format(start, is_valid(start, world_map)))
+        print("Goal: {}, Goal valid: {}".format(goal, is_valid(goal, world_map)))
 
         # RRT implementation
         tree = [(start, None)]
         path = None
-        max_iter = 1000
+        max_iter = 10000
         goal_threshold = 10
 
         for _ in range(max_iter):
-            if np.random.rand() < 0.1:
+            if np.random.rand() < 0.05:
                 sample = goal
             else:
                 sample = (random.randint(0, world_map.shape[0] - 1),
@@ -263,7 +263,7 @@ def talker():
             plt.legend()
 
             # Save the plot to file instead of showing
-            filename = "path_to_{}_{}.png".format(goal_coords[0], goal_coords[1])
+            filename = "path_to_{}_{}.png".format(goal_coords[1], goal_coords[0])
             plt.savefig(filename)
             plt.show()
             plt.close()
@@ -298,7 +298,7 @@ def talker():
             target_yaw = np.arctan2(dy, dx)
 
             # PID controllers for movement & orientation
-            movement_controller = PIDController(Kp=0.4, Ki=0.001, Kd=0.1, output_limits=(-0.5, 0.5))
+            movement_controller = PIDController(Kp=0.4, Ki=0.001, Kd=0.1, output_limits=(0, 0.5))
             orientation_controller = PIDController(Kp=0.6, Ki=0.001, Kd=0.1, output_limits=(-1.5, 1.5))
             
             orientation_corrected = False
@@ -310,16 +310,23 @@ def talker():
                     int(X_OFFSET + (model_position_world[1] / SCALE_X_M_PER_PX))
                 ], dtype=np.int32)
 
+                distance_error = np.linalg.norm(target_position - model_position)
                 _, _, model_yaw = tf.transformations.euler_from_quaternion(model_orientation)
                 yaw_error = (target_yaw - model_yaw + np.pi) % (2 * np.pi) - np.pi
-                distance_error = np.linalg.norm(target_position - model_position)
                 
+                # Check if the turtlebot is in the right location
+                if distance_error <= 2.0:
+                    velocity.linear = Vector3(0, 0, 0)
+                    pub_move.publish(velocity)
+                    rospy.sleep(0.3)
+                    break
+
                 now = rospy.Time.now()
                 dt = (now - last_time).to_sec()
                 last_time = now
 
                 # Check if the turtlebot is facing the right direction - facing towards the target
-                if abs(yaw_error) < 0.02:
+                if abs(yaw_error) < 0.01:
                     velocity.angular.z = 0
                     orientation_corrected = True
 
@@ -330,14 +337,7 @@ def talker():
 
                 if orientation_corrected:
                     linear_vel = movement_controller.compute(np.array([distance_error]), dt)[0]
-
                     velocity.linear = Vector3(linear_vel, 0, 0)
-
-                    # Check if the turtlebot is in the right location
-                    if distance_error <= 2:
-                        velocity.linear = Vector3(0, 0, 0)
-                        pub_move.publish(velocity) 
-                        break
                 
                 pub_move.publish(velocity)
                 rate.sleep()
