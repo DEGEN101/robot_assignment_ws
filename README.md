@@ -4,7 +4,7 @@ This guide explains how to set up and run the TurtleBot Gazebo simulation for ro
 
 ---
 
-## 🚀 Launch Singularity and Set Up ROS
+## 🚀 1. Launch Singularity and Set Up ROS
 
 ```bash
 cd ~/ros
@@ -19,9 +19,7 @@ cd robot_assignment_ws
 catkin_make
 ```
 
----
-
-## ❗ Troubleshooting: `catkin_make` CMake Error
+### ❗ Troubleshooting: `catkin_make` CMake Error
 
 If you see the following error:
 
@@ -38,21 +36,32 @@ catkin_make
 
 ---
 
-## 🌍 Launch the Gazebo World
+## 🌍 2. Launch the Gazebo World
 
 In **Terminal 1**:
 
 ```bash
 cd ~/robot_assignment_ws
 source devel/setup.bash
-./startworld
-# or alternatively
-roslaunch turtlebot_gazebo turtlebot_world.launch
+./startWorld
 ```
+---
+
+## 🧭 3. Run the Navigation Node
+
+In a **new terminal**:
+
+```bash
+rosrun surveillance_bot navigator.py x,y
+```
+
+You will be prompted to enter \`x\` and \`y\` coordinates.  
+The robot will drive to the point using \`/gazebo/get_model_state\` and velocity control.
 
 ---
 
-## 🗺️ Start SLAM (GMapping)
+## 🗺️ 4. Generating a Custom Map
+### 🗺️ 4.1 Start SLAM (GMapping)
 
 In **Terminal 2**:
 
@@ -67,7 +76,7 @@ roslaunch turtlebot_gazebo gmapping_demo.launch custom_gmapping_launch_file:=./s
 
 ---
 
-## ⌨️ Install Teleop (Run Once Only)
+### ⌨️ 4.2 (Part 1) Install Teleop (Run Once Only)
 
 ```bash
 cd ~/robot_assignment_ws/src
@@ -77,9 +86,7 @@ catkin_make
 source devel/setup.bash
 ```
 
----
-
-## 🕹️ Drive the Robot to Build the Map
+### 🕹️ 4.2 (Part 2) Drive the Robot to Build the Map
 
 In **Terminal 3**:
 
@@ -101,7 +108,7 @@ Drive around the environment to help GMapping build a complete map.
 
 ---
 
-## 🛰️ View Mapping Progress in RViz
+### 🛰️ 4.3 View Mapping Progress in RViz
 
 In **Terminal 4**:
 
@@ -110,7 +117,7 @@ roslaunch turtlebot_rviz_launchers view_navigation.launch
 ```
 ---
 
-### 💾 Save the Map
+### 💾 4.4 Save the Map
 
 After mapping:
 
@@ -119,7 +126,7 @@ rosrun map_server map_saver -f ./src/survelliance_bot/src/maps/my_map
 ```
 ---
 
-## 📌 3. Localization with AMCL
+### 📌 4.5 Localization with AMCL
 
 Launch AMCL using the saved map:
 
@@ -131,7 +138,7 @@ roslaunch turtlebot_gazebo amcl_demo.launch map_file:=/home/${user}/ros_home/rob
 
 ---
 
-## 👁️ 4. Viewing in RViz
+### 👁️ 4.6 Viewing in RViz
 
 If RViz doesn't open automatically, run:
 
@@ -147,37 +154,5 @@ In RViz:
    - `RobotModel`
    - `LaserScan` (topic: `/scan`)
 3. Use the `2D Nav Goal` tool to send a goal to the robot
-
----
-
-## 🛠️ 5. Troubleshooting
-
-### 🔧 `Fixed Frame [map] does not exist`
-- Ensure AMCL is publishing the `map → odom` TF
-- Make sure `/map` and `/tf` topics are active:
-  ```bash
-  rostopic echo /map
-  rostopic echo /tf
-  ```
-
-### ❌ `map_server` crashed with exit code 255
-- You probably passed a `.pgm` file instead of a `.yaml`
-- Always use:
-  ```bash
-  map_file:=/full/path/to/my_map.yaml
-  ```
-
----
-
-## 🧭 Run the Navigation Node
-
-In a **new terminal**:
-
-```bash
-rosrun surveillance_bot navigator.py x,y
-```
-
-You will be prompted to enter \`x\` and \`y\` coordinates.  
-The robot will drive to the point using \`/gazebo/get_model_state\` and velocity control.
 
 ---
